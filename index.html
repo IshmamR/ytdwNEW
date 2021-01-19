@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hello</title>
+
+	<style>
+		html, body {
+			max-width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			font-family: Arial;
+			background-color: #eaeaea;
+		}
+		form {
+			max-width: 90%;
+			width: 450px;
+			margin: 50px auto;
+			text-align: center;
+		}
+		input {
+			max-width: 100%;
+			width: 95%;
+			margin: auto;
+			padding: 0.5rem;
+		}
+		button {
+			width: 95%;
+			max-width: 100%;
+			margin: 10px;
+			padding: 10px;
+			background-color: rgb(30, 250, 20);
+			cursor: pointer;
+		}
+		button:hover{background-color: rgb(30, 200, 20);}
+		h1 {
+			text-align: center;
+		}
+		#dn {
+			width: 450px;
+			max-width: 80%;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: rgba(30, 150, 20, 0.2);
+			border: 2px solid rgba(50, 200, 40, 0.7);
+		}
+		.hidden {display: none;}
+	</style>
+
+</head>
+<body>
+	<h1>Download Your Youtube Videos</h1>
+	<form method="post" id="form">
+		<label for="link">Enter Youtube Link:(https://www.youtube.com/watch?v=...)</label>
+		<input id="link" type="text" name="link" placeholder="https://www.youtube.com/watch?v=..." />
+		<button type="submit">Submit</button>
+	</form>
+	<div id="dn">
+		Download will start soon
+	</div>
+
+<script >
+	const form = document.querySelector('#form');
+	const dn = document.querySelector('#dn');
+	dn.className = 'hidden';
+	form.onsubmit = (e) => {
+		dn.className = '';
+	}
+	// console.log(form['link'].value);
+// 	form.onsubmit = (e) => {
+// 		e.preventDefault();
+// 		console.log(form['link'].value);
+// 		const link = form['link'].value;
+// 
+// 		fetch('http://localhost:3000/', {
+// 			method: 'POST',
+// 			headers: {
+// 				'Content-Type': 'application/json'
+// 			},
+// 			body: JSON.stringify({"link": link})
+// 		})
+// 		.then(function(response) {
+// 			return response.json();
+// 		})
+// 		.then(function(data) {
+// 			console.log(data);
+// 		});
+// 	}
+// 	const input = document.querySelector('#input');
+// 	input.onchange = (e) => {
+// 		// console.log(e)
+// 	}
+</script>
+
+</body>
+</html>
